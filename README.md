@@ -29,7 +29,7 @@ git clone https://github.com/yourname/courtwatch.git
 cd courtwatch
 ```
 
-### 2. Insteall the CLI
+### 2. Install the CLI
 
 Make sure that Poetry is installed. 
 
