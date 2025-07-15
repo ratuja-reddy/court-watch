@@ -44,6 +44,14 @@ pip install dist/courtwatch-0.1.0-py3-none-any.whl
 courtwatch check <start-date> <end-date>
 ```
 
+eg
+
+```bash
+courtwatch check 2025-07-19 2025-07-22
+```
+
+
+
 ## 🔮 Coming up
 - More London locations & location filters
 - Time-of-day filters (e.g. only after 6 PM or early mornings)
