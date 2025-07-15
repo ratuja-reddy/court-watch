@@ -1,6 +1,11 @@
 # 🎾 CourtWatch CLI
 
-A sleek CLI tool to check real-time availability of public tennis courts in London.
+Booking courts in London is a pain. `court-watch` makes it easier! 
+
+A CLI tool which will show you all available and bookable courts. 
+
+No need to have to click through several pages and scan for if a court is available only
+to try and checkout and realized it was never available all along.
 
 ## ✅ Features
 
@@ -40,6 +45,6 @@ courtwatch check <start-date> <end-date>
 ```
 
 ## 🔮 Coming up
-- More London locations
+- More London locations & location filters
 - Time-of-day filters (e.g. only after 6 PM or early mornings)
 - Web dashbaord
