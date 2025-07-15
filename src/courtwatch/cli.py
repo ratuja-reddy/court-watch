@@ -40,9 +40,10 @@ def list_courts():
 
     table.add_column("Court", style="cyan", no_wrap=True)
     table.add_column("Booking URL", style="green")
+    table.add_column("Postcode", style="green")
 
     for court in courts:
-        table.add_row(court["name"], court["url"])
+        table.add_row(court["name"], court["url"], court["postcode"])
 
     console.print(table)
 
