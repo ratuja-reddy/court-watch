@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "courtwatch"
+version = "0.1.0"
+description = ""
+authors = ["Ratuja Reddy <ratuja@runna.com>"]
+readme = "README.md"
+packages = [{include = "courtwatch", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.16.0"
+rich = "^14.0.0"
+requests = "^2.32.4"
+beautifulsoup4 = "^4.13.4"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+courtwatch = "courtwatch.cli:main"
