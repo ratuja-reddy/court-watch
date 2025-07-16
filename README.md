@@ -50,6 +50,11 @@ eg
 courtwatch check 2025-07-19 2025-07-22
 ```
 
+Can also filter to only show courts available outside working hours
+
+```bash
+courtwatch check 2025-07-19 2025-07-22 --outside-working-hours
+```
 
 
 ## 🔮 Coming up

@@ -1,7 +1,7 @@
 # src/courtwatch/cli.py
 import typer
 from courtwatch.fetch import fetch_available_slots, VENUES
-from courtwatch.display import show_availability
+from courtwatch.display import is_outside_working_hours, show_availability
 from rich.console import Console
 from rich.table import Table
 from rich import print
@@ -50,7 +50,15 @@ def list_courts():
 from datetime import datetime, timedelta
 
 @app.command()
-def check(start_date: str, end_date: str):
+def check(
+    start_date: str,
+    end_date: str,
+    outside_working_hours: bool = typer.Option(
+        False,
+        "--outside-working-hours",
+        help="Show only slots outside working hours (before 9am or after 6pm on weekdays, all day weekends)"
+    ),
+):
     """
     Show available tennis slots for all venues between two dates.
     """
@@ -62,6 +70,13 @@ def check(start_date: str, end_date: str):
         print(f"\n🔗 [bold underline blue]{name}[/] - [green]{url}[/]\n")
 
         data = fetch_available_slots(start_date, end_date, venue_slug=slug)
+
+        if outside_working_hours:
+            data = [
+                slot for slot in data
+                if is_outside_working_hours(slot["date"], slot["start"])
+            ]
+
         if data:
             show_availability(data, title=f"🎾 {name} — Available Court Slots")
         else:
