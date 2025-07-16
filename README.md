@@ -25,7 +25,7 @@ to try and checkout and realized it was never available all along.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourname/courtwatch.git
+git clone https://github.com/ratuja-reddy/courtwatch.git
 cd courtwatch
 ```
 
