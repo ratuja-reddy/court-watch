@@ -18,6 +18,11 @@ VENUES = [
         "name": "Clapham Common",
         "slug": "ClaphamCommon",
         "url": "https://clubspark.lta.org.uk/ClaphamCommon/Booking/bookbycourt"
+    },
+    {
+        "name": "Larkhall Park",
+        "slug": "LarkHallPark",
+        "url": "https://clubspark.lta.org.uk/LarkHallPark/Booking/bookbycourt"
     }
 ]
 

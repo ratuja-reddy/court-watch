@@ -33,6 +33,12 @@ def list_courts():
             "location": "Clapham, London",
             "postcode": "SW4 6DZ"
         }
+        {
+            "name": "Larkhall Park",
+            "url": "https://clubspark.lta.org.uk/LarkHallPark/Booking/bookbycourt",
+            "location": "Stockwell, London",
+            "postcode": "SW8 2PX"
+        }
     ]
 
     console = Console()
@@ -70,6 +76,12 @@ def check(
         print(f"\n🔗 [bold underline blue]{name}[/] - [green]{url}[/]\n")
 
         data = fetch_available_slots(start_date, end_date, venue_slug=slug)
+
+        # Filter out cricket nets
+        data = [
+            slot for slot in data
+            if "cricket" not in slot["court"].lower() and "net" not in slot["court"].lower()
+        ]
 
         if outside_working_hours:
             data = [
